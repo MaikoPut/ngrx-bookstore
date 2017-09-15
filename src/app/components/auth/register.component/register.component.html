@@ -1,0 +1,16 @@
+<div>
+        <h1 class="col-xs-12">Register</h1>
+        <div class="inputDiv">
+            <input type="text" [(ngModel)]="userCredentials.name" placeholder="Full name">
+        </div>
+        <div class="inputDiv">
+            <input type="text" [(ngModel)]="userCredentials.email" pattern="(?:[a-z]+(?:\.[a-z]+){1})(@ida-mediafoundry.be){1}" placeholder="Email">
+        </div>
+        <div class="inputDiv">
+            <input type="password" [(ngModel)]="userCredentials.password" placeholder="Password">
+        </div>
+        <div class="buttonDiv">
+            <button [disabled]="!userCredentials.name ||!userCredentials.email || !userCredentials.password" (click)="register()">Register</button>
+        </div>
+        <p [routerLink]="['/login']">Already have an account? Sign in</p>
+    </div>

@@ -1,0 +1,46 @@
+<div class="modal fade" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title col-xs-11">Add Book</h5>
+          <button type="button" class="close col-xs-1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body body">
+          <div class="col-xs-8">
+            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.title" placeholder="title">
+            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.author" placeholder="author">
+            <textarea class="col-xs-12 inputBook" cols="50" rows="4" type="text" [(ngModel)]="bookToAdd.description" placeholder="description"></textarea>
+            <input class="col-xs-12 inputBook" type="text" [(ngModel)]="bookToAdd.imageUrl" placeholder="imageUrl">
+          </div>
+          <div class="col-xs-4">
+            <img class="col-xs-12" src="{{bookToAdd.imageUrl}}">              
+          </div>  
+        </div>
+        <div class="modal-footer">
+          <div class="col-xs-12 buttonDiv">
+            <button (click)="addBook()" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div *ngFor="let book of results | async" [routerLink]="['/book', book.id]">
+<div class="col-xs-offset-1 col-xs-10 col-lg-5" [ngClass]="{'bookCard': !book.loanedOut, 'bookCardLoaned': book.loanedOut}">
+    <div class="col-xs-3 bookImageDiv">
+        <img class="bookImage" src={{book.imageUrl}}>
+    </div>
+    <h2 class="col-xs-8">{{book.title}}</h2> 
+    <h3 class="col-xs-8">{{book.author}}</h3>
+    <h3 class="col-xs-8">{{book.loanedBy}}</h3>
+</div>
+</div>
+
+<div class="col-xs-12">
+    <div class="col-xs-12 add-button-div">
+        <button class="btn btn-success" data-toggle="modal" data-target="#modal">+</button>
+    </div>
+</div>

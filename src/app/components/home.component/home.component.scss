@@ -1,0 +1,55 @@
+.bookCard{
+    margin: 0 4% 2% 4% ;
+    background-color:rgba(211,211,211,0.8);
+    padding:0;
+    transition: 0.2s ease;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+    
+}
+
+.bookImageDiv{
+    padding:0;
+}
+
+.bookCardLoaned{
+    margin: 0 4% 2% 4%;
+    background-color: rgba(68,68,68,0.8);
+    color: #DDDDDD;
+    padding:0;
+    transition: 0.2s ease;
+    
+        &:hover{
+            transform: scale(1.1);
+        }
+}
+
+.bookImage{
+    width:100%;
+    height:250px;
+}
+
+.add-button-div{
+    text-align: center;
+    margin : 3% 0 3% 0;
+
+    button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.inputBook{
+    margin-bottom:1%;
+}
+
+.body{
+    height:200px;
+}
+
+.buttonDiv{
+    text-align: left;
+}

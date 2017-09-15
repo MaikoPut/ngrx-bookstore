@@ -1,0 +1,13 @@
+<div>
+    <h1 class="col-xs-12">Login</h1>
+    <div class="inputDiv">
+        <input type="text" [(ngModel)]="userCredentials.email" placeholder="Email">
+    </div>
+    <div class="inputDiv">
+        <input type="password" [(ngModel)]="userCredentials.password" placeholder="Password">
+    </div>
+    <div class="buttonDiv">
+    <button [disabled]="!userCredentials.email || !userCredentials.password" (click)="login()">Login</button>
+    </div>
+    <p [routerLink]="['/register']">Haven't gotten an account yet? Register</p>
+</div>
